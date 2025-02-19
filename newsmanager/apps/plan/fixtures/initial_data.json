@@ -1,0 +1,31 @@
+[
+    {
+        "model": "plan.Plan",
+        "pk": "aedb17ab-5e36-423b-9d2d-7be9b78bdc9e",
+        "fields": {
+            "name": "Jota Info",
+            "verticals": [
+                "defce85b-2216-4dbc-a8a8-055369ba431c",
+                "6d576e3e-ce74-4ae7-8378-aebc0ba43965"
+            ],
+            "created_at": "2025-02-16T15:18:05.729840",
+            "updated_at": "2025-02-16T15:18:05.729840"
+        }
+    },
+    {
+        "model": "plan.Plan",
+        "pk": "3b52ad46-7960-4a9f-9ed5-796c800ed951",
+        "fields": {
+            "name": "Jota PRO",
+            "verticals": [
+                "5b27c185-d8a2-4f68-93c7-61950308dbe0",
+                "defce85b-2216-4dbc-a8a8-055369ba431c",
+                "22c06822-0f1f-4a88-a79a-1d9aeccd526d",
+                "6d576e3e-ce74-4ae7-8378-aebc0ba43965",
+                "9551cfd9-6b7e-4c86-b723-dc85b1e92587"
+            ],
+            "created_at": "2025-02-16T15:18:05.729840",
+            "updated_at": "2025-02-16T15:18:05.729840"
+        }
+    }
+]

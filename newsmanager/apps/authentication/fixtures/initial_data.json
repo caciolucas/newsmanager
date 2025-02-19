@@ -1,0 +1,26 @@
+[
+    {
+        "model": "auth.group",
+        "pk": 1,
+        "fields": {
+            "name": "Editor"
+        }
+    },
+    {
+        "model": "authentication.User",
+        "pk": "661c229a-517a-455a-bfdc-11c87ca0d9be",
+        "fields": {
+            "username": "admin",
+            "first_name": "Administrador",
+            "last_name": "",
+            "email": "admin@newsmanager.com",
+            "is_active": true,
+            "is_staff": true,
+            "is_superuser": true,
+            "is_admin": true,
+            "password": "pbkdf2_sha256$870000$rMnndVDyYHUCRICuFjTXYx$neohVJiA8XAKsJM3gcGzwSW7YJFs6tO9ylSdwa5V0G8=",
+            "created_at": "2025-02-16T15:18:05.729840",
+            "updated_at": "2025-02-16T15:18:05.729840"
+        }
+    }
+]

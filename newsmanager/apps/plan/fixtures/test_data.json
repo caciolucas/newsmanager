@@ -1,0 +1,13 @@
+[
+    {
+        "model": "plan.Subscription",
+        "pk": "df80c346-74cb-456f-8462-51f1df32dd85",
+        "fields": {
+            "plan": "aedb17ab-5e36-423b-9d2d-7be9b78bdc9e",
+            "user": "560b68e0-b3b1-4e34-a7de-dc61ae8d509e",
+            "is_active": true,
+            "created_at": "2025-02-16T15:18:05.729840",
+            "updated_at": "2025-02-16T15:18:05.729840"
+        }
+    }
+]

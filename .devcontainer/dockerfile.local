@@ -1,0 +1,24 @@
+FROM python:3.12
+
+ENV PYTHONBUFFERED 1
+
+RUN apt-get update && \
+	apt-get install -y build-essential libpq-dev curl gettext xclip ripgrep && \
+	rm -rf /var/lib/apt/lists/*
+
+RUN useradd -ms /bin/bash docker
+
+WORKDIR /home/docker/workspace/
+
+ENV PATH $PATH:/home/docker/.local/bin
+
+COPY poetry.lock pyproject.toml ./
+RUN pip install poetry==1.8.2
+
+RUN poetry config virtualenvs.create false
+
+USER docker
+RUN poetry install
+
+# Keep the container running 
+CMD ["tail", "-f", "/dev/null"]

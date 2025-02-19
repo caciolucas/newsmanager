@@ -1,0 +1,51 @@
+[
+    {
+        "model": "taggit.Tag",
+        "pk": 1,
+        "fields": {
+            "name": "dolore",
+            "slug": "dolore"
+        }
+    },
+    {
+        "model": "taggit.Tag",
+        "pk": 2,
+        "fields": {
+            "name": "mollit",
+            "slug": "mollit"
+        }
+    },
+    {
+        "model": "taggit.Tag",
+        "pk": 3,
+        "fields": {
+            "name": "consectetur",
+            "slug": "consectetur"
+        }
+    },
+    {
+        "model": "news.NewsPost",
+        "pk": "0fed773b-abca-48f8-b057-4342b6d5f79d",
+        "fields": {
+            "title": "Eiusmod aliqua do esse deserunt qui.",
+            "sub_title": "Eu velit est Lorem consectetur ad reprehenderit.",
+            "author": "c988c4e3-54b6-4143-9826-5592c4354790",
+            "tags": [],
+            "published_at": "2025-02-17T15:18:05.729840",
+            "created_at": "2025-02-16T15:18:05.729840",
+            "updated_at": "2025-02-16T15:18:05.729840"
+        }
+    },
+    {
+        "model": "news.NewsPost",
+        "pk": "242e85e8-c942-40ba-bed4-6ccf7c20b757",
+        "fields": {
+            "title": "Culpa consectetur id nulla nulla.",
+            "sub_title": "Sunt eiusmod sunt cillum commodo ea adipisicing sint labore.",
+            "author": "c988c4e3-54b6-4143-9826-5592c4354790",
+            "published_at": null,
+            "created_at": "2025-02-16T15:18:05.729840",
+            "updated_at": "2025-02-16T15:18:05.729840"
+        }
+    }
+]

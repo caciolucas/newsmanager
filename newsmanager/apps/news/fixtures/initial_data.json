@@ -1,0 +1,47 @@
+[
+    {
+        "model": "news.NewsVerticals",
+        "pk": "5b27c185-d8a2-4f68-93c7-61950308dbe0",
+        "fields": {
+            "name": "Poder",
+            "created_at": "2025-02-16T15:18:05.729840",
+            "updated_at": "2025-02-16T15:18:05.729840"
+        }
+    },
+    {
+        "model": "news.NewsVerticals",
+        "pk": "defce85b-2216-4dbc-a8a8-055369ba431c",
+        "fields": {
+            "name": "Tributos",
+            "created_at": "2025-02-16T15:18:05.729840",
+            "updated_at": "2025-02-16T15:18:05.729840"
+        }
+    },
+    {
+        "model": "news.NewsVerticals",
+        "pk": "22c06822-0f1f-4a88-a79a-1d9aeccd526d",
+        "fields": {
+            "name": "Saúde",
+            "created_at": "2025-02-16T15:18:05.729840",
+            "updated_at": "2025-02-16T15:18:05.729840"
+        }
+    },
+    {
+        "model": "news.NewsVerticals",
+        "pk": "6d576e3e-ce74-4ae7-8378-aebc0ba43965",
+        "fields": {
+            "name": "Energia",
+            "created_at": "2025-02-16T15:18:05.729840",
+            "updated_at": "2025-02-16T15:18:05.729840"
+        }
+    },
+    {
+        "model": "news.NewsVerticals",
+        "pk": "9551cfd9-6b7e-4c86-b723-dc85b1e92587",
+        "fields": {
+            "name": "Trabalhista",
+            "created_at": "2025-02-16T15:18:05.729840",
+            "updated_at": "2025-02-16T15:18:05.729840"
+        }
+    }
+]
