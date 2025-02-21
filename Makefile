@@ -15,3 +15,6 @@ install-requirements:
 
 dev-requirements: compile-dev-requirements install-requirements
 requirements: compile-requirements install-requirements
+
+lint:
+	ruff check --fix

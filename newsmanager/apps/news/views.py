@@ -1,6 +1,5 @@
-from django.db.models import Q
 from drf_yasg.utils import swagger_auto_schema
-from rest_framework import permissions, viewsets
+from rest_framework import permissions, status, viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
@@ -31,7 +30,9 @@ class NewsPostViewSet(viewsets.ModelViewSet):
                 plans__subscriptions__user=user, plans__subscriptions__is_active=True
             )
             return (
-                NewsPost.objects.filter(verticals__in=active_verticals)
+                NewsPost.objects.filter(
+                    verticals__in=active_verticals, status=NewsPost.PUBLISHED
+                )
                 .distinct()
                 .order_by("pk")
             )

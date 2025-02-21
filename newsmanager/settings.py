@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 import os
 import sys
-from telnetlib import LOGOUT
 
 import dj_database_url
 from decouple import config
