@@ -62,6 +62,8 @@ EXTERNAL_APPS = [
     "taggit",
     "django_prose_editor",
     "drf_yasg",
+    "django_celery_results",
+    "django_celery_beat",
     "rest_framework_simplejwt",
 ]
 
@@ -104,7 +106,7 @@ AUTH_USER_MODEL = "authentication.User"
 
 DATABASES = {
     "default": dj_database_url.config(
-        default="postgres://postgres:postgres@news-manager-db:5432/newsmanager"
+        default="postgres://user:password@news-manager-db:5432/newsmanager"
     )
 }
 
@@ -167,8 +169,18 @@ REST_FRAMEWORK = {
 # Swagger
 LOGIN_URL = "/admin/login"
 # TODO: Fix django logout issue
+
 SWAGGER_SETTINGS = {
     "SECURITY_DEFINITIONS": {
         "Bearer": {"type": "apiKey", "name": "Authorization", "in": "header"}
     }
 }
+
+# Celery
+
+CELERY_RESULT_BACKEND = "django-db"
+CELERY_CACHE_BACKEND = "django-cache"
+CELERY_BROKER_URL = config(
+    "CELERY_BROKER_URL", default="amqp://guest:guest@news-manager-rabbitmq:5672//"
+)
+CELERY_TRACK_STARTED = True

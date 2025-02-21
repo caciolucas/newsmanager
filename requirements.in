@@ -1,0 +1,15 @@
+django
+djangorestframework
+djangorestframework-simplejwt
+psycopg2
+psycopg2-binary
+python-decouple
+dj-database-url
+django-cors-headers
+pillow
+django-prose-editor
+django-taggit
+drf-yasg
+celery
+django-celery-results
+django_celery_beat

@@ -1,0 +1,89 @@
+services:
+  news-manager-api:
+    container_name: news-manager-api
+    image: news-manager:api
+    build:
+      context: ..
+      dockerfile: .docker/Dockerfile
+      target: dev
+    ports:
+      - ${API_FORWARD_PORT:-8000}:8000
+    volumes:
+      - ../:/home/docker/workspace
+    depends_on:
+      - news-manager-db
+      - news-manager-rabbitmq
+      - news-manager-redis
+    env_file:
+      - ../.env
+    command: tail -f /dev/null
+    networks:
+      - news-net
+
+  news-manager-worker:
+    container_name: news-manager-worker
+    image: news-manager:worker
+    build:
+      context: ..
+      dockerfile: .docker/Dockerfile
+      target: worker
+    volumes:
+      - ../:/home/docker/workspace
+    depends_on:
+      - news-manager-rabbitmq
+    env_file:
+      - ../.env
+    networks:
+      - news-net
+
+  news-manager-scheduler:
+    container_name: news-manager-scheduler
+    image: news-manager:scheduler
+    build:
+      context: ..
+      dockerfile: .docker/Dockerfile
+      target: scheduler
+    volumes:
+      - ../:/home/docker/workspace
+    depends_on:
+      - news-manager-rabbitmq
+    env_file:
+      - ../.env
+    networks:
+      - news-net
+
+  news-manager-db:
+    container_name: news-manager-db
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=newsmanager
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - news-net
+
+  news-manager-rabbitmq:
+    container_name: news-manager-rabbitmq
+    image: rabbitmq:3-management
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    networks:
+      - news-net
+
+  news-manager-redis:
+    container_name: news-manager-redis
+    image: redis:6
+    ports:
+      - "6379:6379"
+    networks:
+      - news-net
+
+volumes:
+  postgres_data:
+
+
+networks:
+  news-net:

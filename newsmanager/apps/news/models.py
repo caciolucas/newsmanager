@@ -13,6 +13,14 @@ class UUIDTaggedItem(GenericUUIDTaggedItemBase, TaggedItemBase):
 
 
 class NewsPost(BaseModel):
+    DRAFT = "draft"
+    SCHEDULED = "scheduled"
+    PUBLISHED = "published"
+    STATUS_CHOICES = [
+        (DRAFT, _("Draft")),
+        (SCHEDULED, _("Scheduled")),
+        (PUBLISHED, _("Published")),
+    ]
     title = models.CharField(max_length=255, help_text="Title of the news post")
     sub_title = models.CharField(max_length=255, help_text="Subtitle of the news post")
     content = ProseEditorField(help_text="Content of the news post")
@@ -30,6 +38,14 @@ class NewsPost(BaseModel):
         help_text="Autor da notícia",
     )
 
+    status = models.CharField(
+        max_length=20,
+        choices=STATUS_CHOICES,
+        default=DRAFT,
+        help_text="Status of the news post",
+    )
+    #! NOTE: Poderia fazer o controle de publicação com o campo published_at
+    #! Talvez adicionar uma property verificando se published_at >= now
     published_at = models.DateTimeField(blank=True, null=True)
     verticals = models.ManyToManyField("NewsVerticals", related_name="posts")
 

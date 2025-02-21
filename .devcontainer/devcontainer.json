@@ -1,9 +1,9 @@
 {
 	"name": "news-manager",
 	"dockerComposeFile": [
-		"../.devcontainer/docker-compose.local.yaml"
+		"../.docker/docker-compose.local.yaml"
 	],
-	"service": "api",
+	"service": "news-manager-api",
 	"workspaceFolder": "/home/docker/workspace",
 	"features": {},
 	"customizations": {
@@ -12,7 +12,10 @@
 				"ms-python.python",
 				"charliermarsh.ruff",
 				"bierner.markdown-mermaid"
-			]
+			],
+			"settings": {
+				"python.defaultInterpreterPath": "/home/docker/workspace/.venv/bin/python"
+			}
 		}
 	}
 }
